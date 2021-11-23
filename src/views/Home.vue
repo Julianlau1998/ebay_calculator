@@ -1,18 +1,39 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+<div>
+  <div class="columns is-centered">
+    <div class="column">
+      <!-- <img src="../../public/img/helpButton.png" class="topButton mt-5 mx-4" @click="$router.push('/help')"> -->
+      <img src="../../public/img/settings.png" class="topButton mt-5" @click="$router.push('/settings')">
+    </div>
   </div>
+  <div class="columns is-centered mt-6">
+    <div class="column">
+      <calculator :page="page" />
+    </div>
+  </div>
+</div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import calculator from '@/components/Calculator.vue'
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld
+    calculator
+  },
+  data () {
+    return {
+      page: ''
+    }
+  },
+  created () {
+    this.page = 'send'
+  },
+  methods: {
+    changePage(page) {
+      this.page = page
+    }
   }
 }
 </script>

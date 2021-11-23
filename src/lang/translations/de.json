@@ -1,0 +1,20 @@
+{
+  "text": {
+    "calculator":{
+      "title": "Gebührenrechner",
+      "cost": "Preis",
+      "free_shipping": "Gratis Versand",
+      "shipping_cost": "Versandkosten",
+      "fees": "Gebühren:",
+      "receive": "Sie Erhalten:",
+      "after_shipping": "Nach Versand:"
+    },
+    "settings": {
+      "title": "Gebührenrechner",
+      "text": "Paypal Gebühren können Sich von Land zu Land unterscheiden. Wähle hier einfach den richtigen Wert für Dein Land aus.",
+      "language": "Sprache",
+      "save": "Speichern",
+      "reset": "Reset"
+    }
+  }
+}

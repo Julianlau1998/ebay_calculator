@@ -1,0 +1,99 @@
+@import './variables.scss';
+@import '~bulma';
+@import url('https://fonts.googleapis.com/css?family=Proza+Libre|Fira+Mono');
+
+html {
+    background-color: $mainBackground;
+    color: white;
+    margin: 1rem;
+}
+
+.header {
+    text-align: left;
+    font-family: "Roboto";
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.button, #reset {
+    background-color: $buttonColor;
+	border-radius: 10px;
+	outline: none;
+	color: black;
+    font-weight: bold;
+    top: 1.3rem;
+    font-weight: 600;
+    padding: 0.4rem;
+    font-size: large;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    color: lightgray;
+}
+
+/* Calculator */
+
+.field{
+    width: 95%;
+    margin-top: -1.5rem;
+    max-width: 25rem;
+    min-height: 15rem;
+    padding: 3%;
+    border-radius: 25px;
+    background-color: $calculatorColor;
+    box-shadow: -2px -2px 5px white,
+                4px 4px 5px rgb(28, 28, 28);
+}
+
+.checkbox:hover {
+    color: white;
+}
+
+.topButton {
+    width: 3rem;
+    cursor: pointer;
+}
+
+.is-input {
+    width: 8rem !important;
+    border-radius: 20px;
+    font-size: 1rem !important;
+}
+
+.countryButton {
+    width: 2.5rem;
+    height: 2rem;
+    margin: 0.2rem;
+    margin-top: 1rem;
+}
+
+.checkbox input {
+    width: 1.5rem;
+    height: 1.5rem;
+    position: relative;
+    top: 0.3rem;
+}
+/* Helpers */
+
+.is-flex-center {
+    display: flex;
+    justify-content: center;
+}
+
+/* Settings */
+
+.button{
+    font-size: large;
+}
+#reset{
+  width: 11.5rem;
+  margin-top: 4rem;
+  height: 3rem !important;
+}
+#language {
+  width: 7rem;
+  height: 1.8rem;
+  font-size: large;
+}
+#save {
+  width: 8rem;
+}
