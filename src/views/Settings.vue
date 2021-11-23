@@ -27,7 +27,7 @@
           </select>
         </h3> 
         
-        <button class="button" id="save" @click="save()">
+        <button id="save" @click="save()">
           <b>
             {{ $t('text.settings.save') }}
           </b>
@@ -38,6 +38,12 @@
             {{ $t('text.settings.reset') }}
           </b>
         </button>
+        <br><br>
+        <a class="button" id="rate" href='https://play.google.com/store/apps/details?id=com.gebuehrenrechner_ebay_en_bf2cfb55_7a71_4b17_9751_be132c8981c0&gl=DE'>
+          <b>
+            {{ $t('text.settings.rate') }}
+          </b>
+        </a>
     </div>
   </div>
 </template>
@@ -98,7 +104,7 @@ export default {
     width: 5rem !important;
   }
   .button{
-    margin-top: 10vw;
+    margin-top: 2rem;
     font-size: large;
   }
   #reset{

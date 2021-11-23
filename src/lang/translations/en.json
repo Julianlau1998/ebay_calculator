@@ -13,7 +13,8 @@
       "text": "eBay fees can differ from country to country. Simply set the correct value for your country here once.",
       "language": "Language",
       "save": "Save",
-      "reset": "Reset To Default"
+      "reset": "Reset To Default",
+      "rate": "Rate This App"
     },
     "bottomNav": {
       "send": "Send",
