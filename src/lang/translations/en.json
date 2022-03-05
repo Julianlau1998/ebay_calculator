@@ -2,14 +2,15 @@
   "text": {
     "calculator": {
       "title": "Fee Calculator",
-      "cost": "Price",
+      "cost": "Price:",
       "free_shipping": "Free Shipping",
-      "shipping_cost": "Shipping Cost",
+      "shipping_cost": "Shipping:",
       "fees": "Fees:",
       "receive": "You Receive:",
       "after_shipping": "After Shipping:"
     },
     "settings": {
+      "settings": "Settings",
       "text": "eBay fees can differ from country to country. Simply set the correct value for your country here once.",
       "language": "Language",
       "save": "Save",

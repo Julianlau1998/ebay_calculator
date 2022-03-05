@@ -1,0 +1,29 @@
+.is-primary {
+    color: $primary;
+}
+.is-secondary {
+    color: $secondary;
+}
+.is-third {
+    color: $third
+}
+.is-fourth {
+    color: $fourth
+}
+
+.is-align-left {
+    text-align: left;
+}
+
+.is-result-columns {
+    padding: 0.25rem !important;
+}
+
+.hr {
+    height: 1rem;
+    border-bottom: 2px solid $primary;
+}
+
+.mt-7 {
+    margin-top: 5rem;
+}

@@ -1,73 +1,69 @@
 <template>
-  <div class="is-flex-center">
+  <div class="is-flex-center mt-2">
     <div class="field pt-5 pb-5" ref="calculator">
     <div class="control mb-5">
-        <label for="price">
-            {{ $t('text.calculator.cost') }}
-        </label>
-        <br>
-        <input
-            id="price"
-            v-model="amount"
-            @click="focus()"
-            class="input is-small mt-1 is-input"
-            type="number"
-            placeholder="0"
-        >
-    </div>
-    <div>
-        <label class="checkbox">
-        <input type="checkbox" v-model="freeShipping">
-            {{ $t('text.calculator.free_shipping') }}
-        </label>
+        <div class="columns is-mobile is-justify-content-center is-align--center mt-2">
+            <div class="column is-4 is-result-columns">
+                <label for="price" class="is-size-4">
+                    {{ $t('text.calculator.cost') }}
+                </label>
+            </div>
+            <div class="column is-7 is-result-columns">
+                <input
+                    id="price"
+                    v-model="amount"
+                    @click="focus()"
+                    class="input mt-1 is-input"
+                    type="number"
+                    placeholder="0"
+                >
+            </div>
+        </div>
     </div>
     <div class="control mt-4">
-        <label for="shipping">
-            {{ $t('text.calculator.shipping_cost') }}
-        </label>
-        <br>
-        <input
-            id="shipping"
-            v-model="shippingCost"
-            @click="focus()"
-            class="input is-small mt-1 is-input"
-            type="number"
-            placeholder="0"
-        >
+        <div class="columns is-mobile is-justify-content-center is-align-items-center">
+            <div class="column is-4">
+                <label for="shipping" class="is-size-4">
+                    {{ $t('text.calculator.shipping_cost') }}
+                </label>
+            </div>
+            <div class="column is-7">
+                <input
+                    id="shipping"
+                    v-model="shippingCost"
+                    @click="focus()"
+                    class="input mt-1 is-input"
+                    type="number"
+                    placeholder="0"
+                >
+            </div>
+        </div>
     </div>
-    <p class="solutionParagraph mb-1 mt-5">
-        <span class="is-size-4">
-            {{ $t('text.calculator.fees') }}
-        </span>
-        <span class="is-size-4">
-            {{ isNaN(fees) ? 0 : fees }}<span v-if="$i18n.locale==='German'">€</span>
-        </span> 
-        <br />
-        <span v-if="page==='send'" class="is-size-4">
-            {{ $t('text.calculator.receive') }}
-        </span> 
-        <span class="is-size-4">
-          {{ isNaN(rest) ? 0 : rest }}<span v-if="$i18n.locale==='German'">€</span>
-        </span> 
-        <br>
-        <span v-if="page==='send'" class="is-size-4">
-            {{ $t('text.calculator.after_shipping') }}
-        </span> 
-        <span class="is-size-4">
-          {{ amount === '' ? 0 : shippingCost === '' ? rest : (rest-parseFloat(shippingCost)).toFixed(2) }}<span v-if="$i18n.locale==='German'">€</span>
-        </span> 
-    </p>
+    <div class="mt-5 columns is-mobile">
+        <div class="column is-12 ml-1">
+            <label class="checkbox">
+                <input type="checkbox" class="mr-2" v-model="freeShipping">
+                {{ $t('text.calculator.free_shipping') }}
+            </label>
+        </div>
+    </div>
+    <div class="hr" />
+    <Results
+        :amount="amount"
+        :rest="rest"
+        :shipping-cost="shippingCost"
+        :fees="fees"
+     />
     </div>
   </div>
 </template>
 
 <script>
+import Results from '@/components/Results.vue'
+
 export default {
-    props: {
-        page: {
-            required: true,
-            type: String
-        }
+    components: {
+        Results
     },
     data () {
         return {

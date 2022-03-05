@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="mt-7">
     <p id="text" class="mt-5">
         <b>
             {{ $t('text.settings.text') }}

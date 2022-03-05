@@ -1,16 +1,21 @@
 @import './variables.scss';
+@import './topNav.scss';
+@import './helpers.scss';
 @import '~bulma';
 @import url('https://fonts.googleapis.com/css?family=Proza+Libre|Fira+Mono');
 
 html {
     background-color: $mainBackground;
-    color: white;
     margin: 1rem;
+    font-family: "Roboto";
+}
+
+#app {
+    color: $font;
 }
 
 .header {
     text-align: left;
-    font-family: "Roboto";
     font-weight: 500;
     font-size: 1rem;
 }
@@ -33,15 +38,12 @@ html {
 /* Calculator */
 
 .field{
-    width: 95%;
-    margin-top: -1.5rem;
-    max-width: 25rem;
+    width: 97%;
+    max-width: 27rem;
     min-height: 15rem;
     padding: 3%;
     border-radius: 25px;
-    background-color: $calculatorColor;
-    box-shadow: -2px -2px 5px white,
-                4px 4px 5px rgb(28, 28, 28);
+    border: 2px solid $primary;
 }
 
 .checkbox:hover {
@@ -55,8 +57,11 @@ html {
 
 .is-input {
     width: 8rem !important;
-    border-radius: 20px;
     font-size: 1rem !important;
+    background-color: $mainBackground;
+    border: 3px solid $secondary;
+    border-radius: 20px;
+    color: $white;
 }
 
 .countryButton {
@@ -71,6 +76,8 @@ html {
     height: 1.5rem;
     position: relative;
     top: 0.3rem;
+
+    border: 2px solid red;
 }
 /* Helpers */
 
@@ -103,4 +110,28 @@ html {
   width: 8rem;
   height: 2.8rem;
   margin-top: 2.5rem;
+}
+
+.is-result-value {
+    margin-left: -2rem;
+    overflow-wrap: break-word;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+@media (max-width: 400px) {
+    .is-result-text {
+        margin-left: -2rem;
+    }
+    .is-result-value {
+        margin-left: -0.4rem;
+    }
+    
+}
+
+@media (max-width: 370px) {
+    .is-result-value {
+        margin-left: 0.5rem;
+    }
+    
 }

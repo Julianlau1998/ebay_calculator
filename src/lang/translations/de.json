@@ -2,16 +2,17 @@
   "text": {
     "calculator":{
       "title": "Gebührenrechner",
-      "cost": "Preis",
+      "cost": "Preis:",
       "free_shipping": "Gratis Versand",
-      "shipping_cost": "Versandkosten",
+      "shipping_cost": "Versand:",
       "fees": "Gebühren:",
       "receive": "Sie Erhalten:",
       "after_shipping": "Nach Versand:"
     },
     "settings": {
+      "settings": "Einstellungen",
       "title": "Gebührenrechner",
-      "text": "Paypal Gebühren können Sich von Land zu Land unterscheiden. Wähle hier einfach den richtigen Wert für Dein Land aus.",
+      "text": "eBay Gebühren können Sich von Land zu Land unterscheiden. Wähle hier einfach den richtigen Wert für Dein Land aus.",
       "language": "Sprache",
       "save": "Speichern",
       "reset": "Reset",
