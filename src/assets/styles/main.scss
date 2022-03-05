@@ -64,6 +64,11 @@ html {
     color: $white;
 }
 
+.is-input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: $placeholder;
+    opacity: 1;
+}
+
 .countryButton {
     width: 2.5rem;
     height: 2rem;
