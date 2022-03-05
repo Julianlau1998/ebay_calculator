@@ -54,7 +54,7 @@
             {{ $t('text.calculator.after_shipping') }}
         </span> 
         <span class="is-size-4">
-          {{ amount === '' ? 0 : shippingCost === '' ? rest : rest-parseFloat(shippingCost) }}<span v-if="$i18n.locale==='German'">€</span>
+          {{ amount === '' ? 0 : shippingCost === '' ? rest : (rest-parseFloat(shippingCost)).toFixed(2) }}<span v-if="$i18n.locale==='German'">€</span>
         </span> 
     </p>
     </div>
@@ -92,6 +92,7 @@ export default {
     },
     computed: {
         base () {
+            const amountPlusShipping = parseFloat(this.shippingCost) + parseFloat(this.amount)
             let val = localStorage.getItem("base")
             if(val==null){
                 val = 0.35
@@ -99,7 +100,7 @@ export default {
             if(isNaN(val)){
                 val = 0.35
             }
-            return this.amount < 10 && this.amount > 0.05 ? 0.05 : this.amount > 10 ? parseFloat(val) : 0
+            return amountPlusShipping < 10 && this.amount > 0.05 ? 0.05 : amountPlusShipping > 10 ? parseFloat(val) : 0
         },
         fees () {
             let shipping = this.freeShipping ? 0 : this.shippingCost
@@ -122,7 +123,6 @@ export default {
         rest () {
             let rest = 0
             const shipping = this.shippingCost !== '' ? parseFloat(this.shippingCost) : 0
-            console.log(shipping)
             if (this.amount != null && this.amount !== 0 && shipping != null) {
                 if (!this.freeShipping) {
                     rest = parseFloat(this.amount) + parseFloat(shipping) - this.fees
@@ -141,7 +141,3 @@ export default {
     }
 }
 </script>
-
-<style>
-
-</style>
