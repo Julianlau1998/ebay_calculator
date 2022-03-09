@@ -7,9 +7,18 @@
                 </span>
             </div>
             <div class="column settingsWrapper">
-                <div v-if="settings" class="settingsItems settings">
+                <div v-if="settings" class="settingsItems settings pt-2 is-line-height-1 pb-2">
                     <span @click="openSettings" class="is-pointer mt-6 setting noselect">
                         {{ $t('text.settings.settings') }}
+                    </span>
+                    <div v-if="playBillingSupported" class="hr mb-2 mt-1" />
+                    <span v-if="settings && playBillingSupported">
+                        <span
+                            @click="makePurchase()"
+                            class="is-pointer mt-6 setting noselect"
+                        >
+                            Support The Developer
+                        </span>
                     </span>
                 </div>
                 <i
@@ -27,10 +36,12 @@ export default {
     data () {
         return {
             settings: false,
-            shareAvailable: false
+            shareAvailable: false,
+            playBillingSupported: false
         }
     },
     created () {
+        this.checkPlayBillingAvailable()
         if(navigator.share !== undefined) {
             this.shareAvailable = true
         }
@@ -42,6 +53,36 @@ export default {
         openSettings () {
             this.$router.push('settings')
             this.settings = !this.settings
+        },
+        async checkPlayBillingAvailable () {
+            if ('getDigitalGoodsService' in window) {
+                const service = await window.getDigitalGoodsService('https://play.google.com/billing');
+                if (service) {
+                    this.playBillingSupported = true
+                }
+            }
+        },
+        async makePurchase(service) {
+            const paymentMethods = [{
+                supportedMethods: "https://play.google.com/billing",
+                data: {
+                    sku: 'support',
+                }
+            }]
+            const paymentDetails = {
+                total: {
+                    label: `Total`,
+                    amount: {currency: `USD`, value: `10`}
+                }
+            }
+            const request = new PaymentRequest(paymentMethods, paymentDetails);
+            try {
+                const paymentResponse = await request.show();
+                const {purchaseToken} = paymentResponse.details;
+                await service.acknowledge(purchaseToken, 'repeatable');
+            } catch(e) {
+                alert('Something went wrong. Please try again.')
+            }
         }
     }
 }

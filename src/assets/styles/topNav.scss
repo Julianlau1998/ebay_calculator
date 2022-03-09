@@ -20,6 +20,7 @@
 }
 
 .settings {
+    text-align: center;
     cursor: pointer;
     font-size: 1.3rem;
     border: 1px solid $secondary;
@@ -29,8 +30,8 @@
     position: absolute;
     right: 1.5rem;
     top: 3.2rem;
+    min-width: 9.8rem;
     font-size: 1.5rem;
-    line-height: 1.7;
 }
 
 .setting:hover, .setting:active {
@@ -38,7 +39,7 @@
 }
 
 .setting {
-    margin-bottom: 10.7rem !important;
+    margin-bottom: 7.7rem !important;
 }
 
 label.label input[type="file"] {
@@ -51,3 +52,7 @@ label.label input[type="file"] {
   .label:valid+span {
     color: #ffffff;
   }
+
+  .is-line-height-1 {
+    line-height: 1.1 !important;
+}
