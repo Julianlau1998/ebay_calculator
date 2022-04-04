@@ -39,7 +39,7 @@
           </b>
         </button>
         <br><br>
-        <a class="button" id="rate" href='https://play.google.com/store/apps/details?id=com.gebuehrenrechner_ebay_en_bf2cfb55_7a71_4b17_9751_be132c8981c0&gl=DE'>
+        <a v-if="!iOS" class="button" id="rate" href='https://play.google.com/store/apps/details?id=com.gebuehrenrechner_ebay_en_bf2cfb55_7a71_4b17_9751_be132c8981c0&gl=DE'>
           <b>
             {{ $t('text.settings.rate') }}
           </b>
@@ -78,6 +78,9 @@ export default {
   computed: {
     language () {
       return this.$i18n.locale
+    },
+    iOS () {
+      return this.$store.state.iOS
     }
   },
   watch: {
