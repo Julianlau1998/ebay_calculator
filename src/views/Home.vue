@@ -1,10 +1,5 @@
 <template>
-<div>
-  <div class="columns is-centered">
-    <div class="column">
-      <img src="../../public/img/settings.png" class="topButton mt-3" @click="$router.push('/settings')">
-    </div>
-  </div>
+<div class="mt-wrapper">
   <div class="columns is-centered mt-5">
     <div class="column">
       <calculator />
