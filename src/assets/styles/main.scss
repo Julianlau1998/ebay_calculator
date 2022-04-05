@@ -20,19 +20,33 @@ html {
     font-size: 1rem;
 }
 
-.button, #reset, #rate, #save {
-    background-color: $buttonColor;
-	border-radius: 10px;
-	outline: none;
-	color: black;
-    font-weight: bold;
-    top: 1.3rem;
-    font-weight: 600;
-    padding: 0.4rem;
-    font-size: large;
-    cursor: pointer;
-    -webkit-tap-highlight-color: transparent;
-    color: lightgray;
+// .button, #reset, #rate, #save {
+//     background-color: $buttonColor;
+// 	border-radius: 10px;
+// 	outline: none;
+// 	color: black;
+//     font-weight: bold;
+//     top: 1.3rem;
+//     font-weight: 600;
+//     padding: 0.4rem;
+//     font-size: large;
+//     cursor: pointer;
+//     -webkit-tap-highlight-color: transparent;
+//     color: lightgray;
+// }
+
+.button {
+    border: 2px solid $primary;
+    background-color: $mainBackground;
+    color: $primary;
+
+    &.is-round {
+        border-radius: 10px;
+    }
+
+    &.is-small-button {
+        max-height: 3rem;
+    }
 }
 
 /* Calculator */
@@ -93,24 +107,26 @@ html {
 
 /* Settings */
 
-.button{
-    font-size: large;
+
+.smallInput {
+  width: 5rem !important;
 }
+
+.is-setting-text {
+    max-width: 10rem;
+}
+
 #reset{
-  width: 11.5rem;
+  width: 11rem;
+  height: 3.5rem !important;
+}
+
+#rate {
+  width: 14.5rem;
   margin-top: 1rem;
   height: 3.5rem !important;
 }
-#rate{
-    width: 14.5rem;
-    margin-top: 1rem;
-    height: 3.5rem !important;
-  }
-#language {
-  width: 7rem;
-  height: 1.8rem;
-  font-size: large;
-}
+
 #save {
   width: 8rem;
   height: 2.8rem;
