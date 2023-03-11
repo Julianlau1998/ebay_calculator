@@ -98,6 +98,14 @@ html {
 
     border: 2px solid red;
 }
+
+.ad {
+    position: fixed;
+    bottom: 0rem;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 /* Helpers */
 
 .is-flex-center {
@@ -147,12 +155,12 @@ html {
     .is-result-value {
         margin-left: -0.4rem;
     }
-    
+
 }
 
 @media (max-width: 370px) {
     .is-result-value {
         margin-left: 0.5rem;
     }
-    
+
 }

@@ -5,24 +5,24 @@
       <calculator />
     </div>
   </div>
+  <AdCard v-if="!iOS" class="mt-5" />
 </div>
 </template>
 
 <script>
 import calculator from '@/components/Calculator.vue'
+import AdCard from "@/components/ads/AdCard"
 
 export default {
-  name: 'Home',
+  name: 'home-component',
   components: {
-    calculator
+    calculator,
+    AdCard
   },
-  data () {
-    return {
+  computed: {
+    iOS () {
+      return this.$store.state.iOS
     }
-  },
-  created () {
-  },
-  methods: {
   }
 }
 </script>

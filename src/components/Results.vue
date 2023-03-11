@@ -9,31 +9,31 @@
             <div class="column is-5 is-result-columns is-result-value">
                 <span class="is-size-5">
                     {{ isNaN(fees) ? 0 : fees }}<span v-if="$i18n.locale==='German'">€</span>
-                </span> 
+                </span>
             </div>
         </div>
         <div class="columns is-mobile is-align-left">
             <div class="column is-7 is-result-columns is-result-text">
                 <span class="is-size-5">
                     {{ $t('text.calculator.receive') }}
-                </span> 
+                </span>
             </div>
             <div class="column is-5 is-result-columns is-result-value">
                 <span class="is-size-5">
                     {{ isNaN(rest) ? 0 : rest }}<span v-if="$i18n.locale==='German'">€</span>
-                </span> 
+                </span>
             </div>
         </div>
         <div class="columns is-mobile is-align-left">
             <div class="column is-7 is-result-columns is-result-text">
                 <span class="is-size-5">
                     {{ $t('text.calculator.after_shipping') }}
-                </span> 
+                </span>
             </div>
             <div class="column is-5 is-result-columns is-result-value">
                 <span class="is-size-5">
                     {{ amount === '' ? 0 : shippingCost === '' ? rest : (rest-parseFloat(shippingCost)).toFixed(2) }}<span v-if="$i18n.locale==='German'">€</span>
-                </span> 
+                </span>
             </div>
         </div>
     </div>
@@ -41,7 +41,7 @@
 
 <script>
 export default {
-    name: 'results',
+    name: 'results-components',
     props: {
         amount: {
             type: [String, Number],

@@ -35,22 +35,22 @@
 
 <script>
 export default {
-
+  name: 'privacy-component',
 }
 </script>
 
 <style scoped>
     #app {
-      margin: 0 10rem 0 10rem;  
+      margin: 0 10rem 0 10rem;
     }
     @media (max-width: 1000px) {
         #app {
-            margin: 0 3rem 0 3rem;  
+            margin: 0 3rem 0 3rem;
         }
     }
     @media (max-width: 600) {
         #app {
-            margin: 0 0rem 0 0rem;  
+            margin: 0 0rem 0 0rem;
         }
     }
 </style>

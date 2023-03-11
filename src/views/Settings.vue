@@ -27,7 +27,7 @@
           </select>
         </div>
         <br>
-        
+
         <button class="button is-round is-small-button" id="save" @click="save()">
           <b>
             {{ $t('text.settings.save') }}
@@ -51,6 +51,7 @@
 
 <script>
 export default {
+  name: 'settings-component',
   data () {
     return {
       percent: 11,
@@ -71,7 +72,7 @@ export default {
     }
     if(this.percent==null){
       this.percent = 11
-    }  
+    }
     if(isNaN(this.percent)){
       this.percent = 11
     }

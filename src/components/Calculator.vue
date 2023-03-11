@@ -62,6 +62,7 @@
 import Results from '@/components/Results.vue'
 
 export default {
+    name: 'calculator-component',
     components: {
         Results
     },
@@ -77,7 +78,7 @@ export default {
         this.percent = localStorage.getItem("percent")
         if(this.percent==null){
         this.percent = 11
-        }  
+        }
         if(isNaN(this.percent)){
         this.percent = 11
         }

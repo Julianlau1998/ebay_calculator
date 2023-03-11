@@ -4,7 +4,7 @@
         Geld Senden:
         </h3>
         <p class="text">
-            Geben Sie hier einen Betrag ein, welchen sie per Paypal senden möchten und sie erfahren wie 
+            Geben Sie hier einen Betrag ein, welchen sie per Paypal senden möchten und sie erfahren wie
             viel Geld beim Empfänger ankommt.
         </p>
 
@@ -23,7 +23,7 @@
         </h5>
         <p class="disclaimer">
             Diese App steht in keinerlei Verbindung zu Paypal.
-            Die Inhalte wurden Sorgfältig recherchiert, dennoch kann keine Gewähr übernommen werden 
+            Die Inhalte wurden Sorgfältig recherchiert, dennoch kann keine Gewähr übernommen werden
             für die Richtigkeit und Aktualität der Inhalte.
         </p>
 
@@ -39,7 +39,7 @@
 
 <script>
 export default {
-
+  name: 'help-component',
 }
 </script>
 
